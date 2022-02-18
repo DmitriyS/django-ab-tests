@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class AnalyticsConfig(AppConfig):
-    name = 'ab_tests'
+    name: str = 'ab_tests'

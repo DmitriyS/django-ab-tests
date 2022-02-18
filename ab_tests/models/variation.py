@@ -1,13 +1,15 @@
-from django.db.models import Model, ForeignKey, CASCADE, PositiveIntegerField, CharField
+from django.db.models import CASCADE, CharField, ForeignKey, Model, PositiveIntegerField
+
+from .experiment import Experiment
 
 
 class Variation(Model):
-    experiment = ForeignKey('ab_tests.Experiment', related_name='variations', on_delete=CASCADE)
-    name = CharField(max_length=255)
-    probability = PositiveIntegerField()
+    experiment: Experiment = ForeignKey(Experiment, related_name='variations', on_delete=CASCADE)
+    name: str = CharField(max_length=255)
+    probability: int = PositiveIntegerField()
 
     class Meta:
         db_table = 'variations'
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name

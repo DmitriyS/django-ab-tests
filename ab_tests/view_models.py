@@ -1,23 +1,25 @@
-from typing import List
+from __future__ import annotations
+
+from dataclasses import dataclass
 
 from ab_tests.models import Variation, Experiment, Group
 
 
+@dataclass
 class ExperimentViewModel:
-    def __init__(self, experiment: Experiment, variations: List[Variation]):
-        self.experiment = experiment
-        self.variations = variations
+    experiment: Experiment
+    variations: list[Variation]
 
     @classmethod
-    def from_experiment(cls, experiment: Experiment) -> 'ExperimentViewModel':
+    def from_experiment(cls, experiment: Experiment) -> ExperimentViewModel:
         return cls(experiment=experiment, variations=list(experiment.variations.all()))
 
 
+@dataclass
 class GroupViewModel:
-    def __init__(self, experiment: Experiment, variation: Variation):
-        self.experiment = experiment
-        self.variation = variation
+    experiment: Experiment
+    variation: Variation
 
     @classmethod
-    def from_group(cls, group: Group) -> 'GroupViewModel':
+    def from_group(cls, group: Group) -> GroupViewModel:
         return cls(experiment=group.variation.experiment, variation=group.variation)

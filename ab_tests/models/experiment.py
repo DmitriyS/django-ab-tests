@@ -1,28 +1,25 @@
-from typing import List, Union
+from __future__ import annotations
 
-from django.db.models import Model, CharField, Manager, QuerySet
+from django.db.models import CharField, Model, QuerySet
 
 from ab_tests.types import Idfa
 
 
-Experiments = Union[QuerySet, List['Experiment']]
+class ExperimentQuerySet(QuerySet):
+    def select_experiments_with_variations(self) -> ExperimentQuerySet:
+        return self.prefetch_related('variations').all()
 
-
-class ExperimentManager(Manager):
-    def select_experiments_with_variations(self) -> Experiments:
-        return self.all().prefetch_related('variations')
-
-    def select_experiments_that_groups_do_not_participate_in(self, idfa: Idfa) -> Experiments:
+    def select_experiments_that_groups_do_not_participate_in(self, idfa: Idfa) -> ExperimentQuerySet:
         return self.select_experiments_with_variations().exclude(variations__group__idfa=idfa)
 
 
 class Experiment(Model):
-    name = CharField(max_length=255)
+    name: str = CharField(max_length=255)
 
-    objects = ExperimentManager()
+    objects: ExperimentQuerySet = ExperimentQuerySet.as_manager()
 
     class Meta:
         db_table = 'experiments'
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name

@@ -8,12 +8,12 @@ from ab_tests.models import Experiment, Variation
 
 
 class VariationInlineFormset(BaseInlineFormSet):
-    EXPECTED_TOTAL_PROBABILITY = 100
+    EXPECTED_TOTAL_PROBABILITY: int = 100
 
-    def clean(self):
+    def clean(self) -> None:
         self.validate_total_probability()
 
-    def validate_total_probability(self):
+    def validate_total_probability(self) -> None:
         if sum(self.accumulate_variation_probabilities()) != self.EXPECTED_TOTAL_PROBABILITY:
             raise ValidationError(f'total probability should be {self.EXPECTED_TOTAL_PROBABILITY}')
 

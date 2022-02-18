@@ -4,8 +4,7 @@ from webargs.djangoparser import use_args
 
 from ab_tests.base import ApiView
 from ab_tests.schemas import IdfaSchema
-from ab_tests.serializers import ExperimentListSerializer
-from ab_tests.serializers import GroupListSerializer
+from ab_tests.serializers import ExperimentListSerializer, GroupListSerializer
 from ab_tests.service import AnalyticsService
 from ab_tests.types import Idfa
 
