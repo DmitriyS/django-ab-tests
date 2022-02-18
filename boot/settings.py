@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import sys
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -67,6 +69,18 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {'simple': {'format': '%(asctime)s %(levelname)s %(name)s: %(message)s'}},
+    'handlers': {
+        'stderr': {'level': 'DEBUG', 'class': 'logging.StreamHandler', 'stream': sys.stderr, 'formatter': 'simple'},
+    },
+    'loggers': {
+        '': {'handlers': ['stderr'], 'level': 'DEBUG'},
+    },
+}
 
 WSGI_APPLICATION = "boot.wsgi.application"
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"

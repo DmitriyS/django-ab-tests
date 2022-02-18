@@ -26,7 +26,7 @@ class ExperimentListView(BaseAnalyticsView):
 class GroupListView(BaseAnalyticsView):
     serializer_class = GroupListSerializer
 
-    @use_args(IdfaSchema)
+    @use_args(IdfaSchema, location='query')
     def get(self, request: Request, idfa: Idfa) -> Response:
         groups = self.service.populate_and_list_groups(idfa)
         return self.serialize_response(groups)

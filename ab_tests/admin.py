@@ -1,6 +1,8 @@
 from typing import Iterable
 
+from django.contrib import admin
 from django.contrib.admin import register, ModelAdmin, TabularInline
+from django.contrib.auth.models import Group, User
 from django.core.exceptions import ValidationError
 from django.forms import BaseInlineFormSet
 
@@ -32,3 +34,7 @@ class VariationInline(TabularInline):
 @register(Experiment)
 class ExperimentAdmin(ModelAdmin):
     inlines = [VariationInline]
+
+
+admin.site.unregister(User)
+admin.site.unregister(Group)
