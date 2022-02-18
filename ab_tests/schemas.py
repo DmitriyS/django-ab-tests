@@ -1,8 +1,8 @@
 from marshmallow import post_load
 from marshmallow.fields import String
 
-from analytics.base import ViewSchema
-from analytics.types import Idfa
+from ab_tests.base import ViewSchema
+from ab_tests.types import Idfa
 
 
 class IdfaSchema(ViewSchema):

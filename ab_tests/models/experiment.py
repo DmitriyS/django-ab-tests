@@ -2,7 +2,7 @@ from typing import List, Union
 
 from django.db.models import Model, CharField, Manager, QuerySet
 
-from analytics.types import Idfa
+from ab_tests.types import Idfa
 
 
 Experiments = Union[QuerySet, List['Experiment']]

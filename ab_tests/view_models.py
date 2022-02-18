@@ -1,6 +1,6 @@
 from typing import List
 
-from analytics.models import Variation, Experiment, Group
+from ab_tests.models import Variation, Experiment, Group
 
 
 class ExperimentViewModel:

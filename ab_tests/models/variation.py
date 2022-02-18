@@ -2,7 +2,7 @@ from django.db.models import Model, ForeignKey, CASCADE, PositiveIntegerField, C
 
 
 class Variation(Model):
-    experiment = ForeignKey('analytics.Experiment', related_name='variations', on_delete=CASCADE)
+    experiment = ForeignKey('ab_tests.Experiment', related_name='variations', on_delete=CASCADE)
     name = CharField(max_length=255)
     probability = PositiveIntegerField()
 

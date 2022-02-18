@@ -2,7 +2,7 @@ from typing import List, Union
 
 from django.db.models import Model, CharField, ForeignKey, CASCADE, Manager, QuerySet
 
-from analytics.types import Idfa
+from ab_tests.types import Idfa
 
 
 Experiments = Union[QuerySet, List['Group']]
@@ -15,7 +15,7 @@ class GroupManager(Manager):
 
 class Group(Model):
     idfa = CharField(max_length=64)
-    variation = ForeignKey('analytics.Variation', on_delete=CASCADE)
+    variation = ForeignKey('ab_tests.Variation', on_delete=CASCADE)
 
     objects = GroupManager()
 

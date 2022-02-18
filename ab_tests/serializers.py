@@ -1,9 +1,9 @@
 from typing import List
 
-from analytics.base import BaseViewSerializer
-from analytics.models import Variation
-from analytics.utils import apply
-from analytics.view_models import ExperimentViewModel, GroupViewModel
+from ab_tests.base import BaseViewSerializer
+from ab_tests.models import Variation
+from ab_tests.utils import apply
+from ab_tests.view_models import ExperimentViewModel, GroupViewModel
 
 
 class ExperimentListSerializer(BaseViewSerializer):

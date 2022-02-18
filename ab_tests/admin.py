@@ -4,7 +4,7 @@ from django.contrib.admin import register, ModelAdmin, TabularInline
 from django.core.exceptions import ValidationError
 from django.forms import BaseInlineFormSet
 
-from analytics.models import Experiment, Variation
+from ab_tests.models import Experiment, Variation
 
 
 class VariationInlineFormset(BaseInlineFormSet):

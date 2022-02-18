@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name='variations',
-                        to='analytics.Experiment',
+                        to='ab_tests.Experiment',
                     ),
                 ),
             ],
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('idfa', models.CharField(max_length=64)),
-                ('variation', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='analytics.Variation')),
+                ('variation', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ab_tests.Variation')),
             ],
             options={'db_table': 'groups',},
         ),
