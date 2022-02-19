@@ -15,9 +15,9 @@ class GroupTestCase(BaseApiTestCase):
         self.assertEqual(experiment.name, self.experiment_name)
         self.assertEqual(len(experiment.variations), 1)
 
-        [variations] = experiment.variations
-        self.assertEqual(variations.name, self.variation_name)
-        self.assertEqual(variations.probability, self.variation_probability)
+        [variation] = experiment.variations
+        self.assertEqual(variation.name, self.variation_name)
+        self.assertEqual(variation.probability, self.variation_probability)
 
     def test_get_groups(self) -> None:
         groups = self.api.get_groups(self.idfa)
