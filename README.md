@@ -31,6 +31,7 @@
 
 # Установка
 
+- python 3.10+
 - pip install -r requirements_dev.txt
 - python manage.py migrate
 - python manage.py createsuperuser
@@ -40,9 +41,14 @@
 - python manage.py runserver 8000
 
 # Конфигурация
+
 - localhost:8000/admin/
 
 # Использование
 
 - http -v localhost:8000/experiments/
 - http -v localhost:8000/groups/ idfa==123
+
+# Тесты
+
+- python manage.py test [-k test_name]
