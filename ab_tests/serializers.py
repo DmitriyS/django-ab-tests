@@ -1,7 +1,7 @@
-from ab_tests.base import BaseViewSerializer
-from ab_tests.models import Variation
-from ab_tests.utils import apply
-from ab_tests.view_models import ExperimentViewModel, GroupViewModel
+from .base import BaseViewSerializer
+from .models import Variation
+from .utils import apply
+from .view_models import ExperimentViewModel, GroupViewModel
 
 
 class ExperimentListSerializer(BaseViewSerializer):

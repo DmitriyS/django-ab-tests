@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from django.db.models import CASCADE, CharField, ForeignKey, Model, QuerySet
 
-from ab_tests.types import Idfa
 from .variation import Variation
+from ..types import Idfa
 
 
 class GroupQuerySet(QuerySet):

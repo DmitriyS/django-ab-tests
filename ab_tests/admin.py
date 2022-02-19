@@ -6,7 +6,7 @@ from django.contrib.auth.models import Group, User
 from django.core.exceptions import ValidationError
 from django.forms import BaseInlineFormSet
 
-from ab_tests.models import Experiment, Variation
+from .models import Experiment, Variation
 
 
 class VariationInlineFormset(BaseInlineFormSet):

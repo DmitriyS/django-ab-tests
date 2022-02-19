@@ -1,9 +1,9 @@
 from typing import Iterable
 
-from ab_tests.models import Experiment, Group, Variation
-from ab_tests.types import Idfa
-from ab_tests.utils import apply, weighted_choice
-from ab_tests.view_models import ExperimentViewModel, GroupViewModel
+from .models import Experiment, Group, Variation
+from .types import Idfa
+from .utils import apply, weighted_choice
+from .view_models import ExperimentViewModel, GroupViewModel
 
 
 class AnalyticsService:

@@ -2,11 +2,11 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from webargs.djangoparser import use_args
 
-from ab_tests.base import ApiView
-from ab_tests.schemas import IdfaSchema
-from ab_tests.serializers import ExperimentListSerializer, GroupListSerializer
-from ab_tests.service import AnalyticsService
-from ab_tests.types import Idfa
+from .base import ApiView
+from .schemas import IdfaSchema
+from .serializers import ExperimentListSerializer, GroupListSerializer
+from .service import AnalyticsService
+from .types import Idfa
 
 
 class BaseAnalyticsView(ApiView):

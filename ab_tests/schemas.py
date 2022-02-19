@@ -3,8 +3,8 @@ from typing import Any
 from marshmallow import post_load
 from marshmallow.fields import String
 
-from ab_tests.base import ViewSchema
-from ab_tests.types import Idfa
+from .base import ViewSchema
+from .types import Idfa
 
 
 class IdfaSchema(ViewSchema):

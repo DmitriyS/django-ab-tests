@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from ab_tests.models import Variation, Experiment, Group
+from .models import Variation, Experiment, Group
 
 
 @dataclass

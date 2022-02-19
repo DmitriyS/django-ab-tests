@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from django.db.models import CharField, Model, QuerySet
 
-from ab_tests.types import Idfa
+from ..types import Idfa
 
 
 class ExperimentQuerySet(QuerySet):
