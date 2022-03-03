@@ -38,7 +38,6 @@
 - python 3.10+
 - pip install -r requirements_dev.txt
 - python manage.py migrate
-- python manage.py createsuperuser
 
 # Запуск
 
@@ -46,6 +45,7 @@
 
 # Конфигурация
 
+- python manage.py createsuperuser
 - localhost:8000/admin/
 
 # Использование
