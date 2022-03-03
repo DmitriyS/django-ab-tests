@@ -21,7 +21,7 @@ class Generator:
     def split_variations(self, variations_count: int) -> Iterable[int]:
         probability_left: int = self.total_variations_probability
         for i in range(variations_count - 1):
-            variation_probability = random.randint(1, probability_left - i)
+            variation_probability = random.randint(1, probability_left - variations_count + i)
             yield variation_probability
             probability_left -= variation_probability
         yield probability_left
